@@ -37,7 +37,7 @@ app.post("/user", (req, res) => {
     });
 })
 
-app.listen(3000, () => {
-    console.log("server is runnin on port 3000....");
+app.listen(8080, () => {
+    console.log("server is runnin on port 8080....");
     
 });
