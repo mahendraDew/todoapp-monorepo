@@ -1,4 +1,4 @@
-name: Continuous Deployment (Backend)
+name: Continuous Deployment (frontend)
 on:
   push:
     branches: [ main ]
@@ -18,7 +18,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
+          build-args: ${{secrets.DOCKERHUB_DATABASE}}
           context: .
-          file: ./docker/Dockerfile.be
+          file: ./docker/Dockerfile.fe
           push: true
-          tags: mahendradew/todo-app-backend:${{ github.sha }}
+          tags: mahendradew/todo-app-fe:${{ github.sha }}

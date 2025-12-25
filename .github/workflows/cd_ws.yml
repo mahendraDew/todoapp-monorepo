@@ -1,4 +1,4 @@
-name: Continuous Deployment (Backend)
+name: Continuous Deployment (ws)
 on:
   push:
     branches: [ main ]
@@ -19,6 +19,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./docker/Dockerfile.be
+          file: ./docker/Dockerfile.ws
           push: true
-          tags: mahendradew/todo-app-backend:${{ github.sha }}
+          tags: mahendradew/todo-app-ws:${{ github.sha }}
